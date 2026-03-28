@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softchoice US Central × Canva — Spring 2026 Leaderboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a6b3c 0%, #27ae60 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.2em;
+            margin-bottom: 6px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.05em;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+        .card-header {
+            background: linear-gradient(135deg, #1a6b3c 0%, #27ae60 100%);
+            color: white;
+            padding: 20px 28px;
+            font-size: 1.15em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .last-updated {
+            text-align: center;
+            color: rgba(255,255,255,0.75);
+            font-size: 0.85em;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead th {
+            background: #f1f3f5;
+            padding: 13px 16px;
+            text-align: left;
+            font-size: 0.82em;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #555;
+            font-weight: 700;
+        }
+        td {
+            padding: 13px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: middle;
+        }
+        tbody tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background: #f8fff9; }
+        .rank {
+            font-weight: 800;
+            font-size: 1.1em;
+            color: #888;
+            text-align: center;
+            width: 36px;
+        }
+        .rank-1 { color: #f39c12; }
+        .rank-2 { color: #95a5a6; }
+        .rank-3 { color: #cd7f32; }
+        .rep-name { font-weight: 600; color: #222; }
+        .points {
+            font-weight: 800;
+            font-size: 1.1em;
+            color: #27ae60;
+        }
+        .medal { font-size: 1.4em; }
+        .prize-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 14px;
+            padding: 22px 28px;
+            color: white;
+            margin-bottom: 24px;
+        }
+        .prize-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .prize-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .prize-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        .prize-card ul li:last-child { border-bottom: none; }
+        .pts-formula {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 18px 24px;
+            margin-bottom: 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+        }
+        .pts-item {
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .pts-item .pts-val {
+            font-size: 1.6em;
+            font-weight: 800;
+            color: #27ae60;
+        }
+        .pts-item .pts-label {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 3px;
+        }
+        .category-leaders {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .leader-card {
+            background: white;
+            border-radius: 14px;
+            padding: 18px 16px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .leader-card .lc-icon { font-size: 1.8em; margin-bottom: 6px; }
+        .leader-card .lc-title {
+            font-size: 0.78em;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .leader-card .lc-name {
+            font-size: 1em;
+            font-weight: 700;
+            color: #222;
+        }
+        .leader-card .lc-val {
+            font-size: 0.9em;
+            color: #27ae60;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        .no-data {
+            text-align: center;
+            padding: 50px 20px;
+            color: #aaa;
+            font-size: 1em;
+        }
+        .warning-banner {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 10px;
+            padding: 12px 18px;
+            margin-bottom: 18px;
+            color: #856404;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        .back-link {
+            display: inline-block;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-bottom: 16px;
+            padding: 6px 14px;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        .back-link:hover {
+            background: rgba(255,255,255,0.15);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="index.html" class="back-link">&#8592; Back to Dashboard</a>
+    <h1>&#127942; Spring 2026 Leaderboard</h1>
+    <p class="subtitle">Softchoice US Central &times; Canva &mdash; Live standings</p>
+    <p class="last-updated" id="lastUpdated">Loading data&#8230;</p>
+
+    <div class="prize-card">
+        <h3>&#127873; Prizes Up for Grabs</h3>
+        <ul>
+            <li>&#127944; <strong>Top Rep Overall</strong> &mdash; $75 Amazon gift card</li>
+            <li>&#128222; <strong>Most Meetings Booked</strong> &mdash; $25 Amazon gift card per meeting booked (no cap!)</li>
+            <li>&#128241; <strong>Most Calls Made</strong> &mdash; $25 Amazon gift card</li>
+            <li>&#128140; <strong>Most Emails Sent</strong> &mdash; $25 Amazon gift card</li>
+        </ul>
+    </div>
+
+    <div class="pts-formula" id="ptsFormula">
+        <div class="pts-item"><div class="pts-val">100</div><div class="pts-label">Deal Booked</div></div>
+        <div class="pts-item"><div class="pts-val">40</div><div class="pts-label">Meeting Booked</div></div>
+        <div class="pts-item"><div class="pts-val">25</div><div class="pts-label">Deal Registration</div></div>
+        <div class="pts-item"><div class="pts-val">3</div><div class="pts-label">Call Made</div></div>
+        <div class="pts-item"><div class="pts-val">1</div><div class="pts-label">Email Sent</div></div>
+    </div>
+
+    <div class="category-leaders" id="categoryLeaders"></div>
+
+    <div class="card" id="leaderboardCard">
+        <div class="card-header">&#127942; Individual Standings</div>
+        <div id="leaderboardBody"></div>
+    </div>
+</div>
+
+<script>
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/PLACEHOLDER/pub?output=csv';
+
+const PTS = { deals: 100, meetings: 40, registrations: 25, calls: 3, emails: 1 };
+
+function calcPoints(row) {
+    return (parseInt(row.deals)||0)*PTS.deals
+         + (parseInt(row.meetings)||0)*PTS.meetings
+         + (parseInt(row.registrations)||0)*PTS.registrations
+         + (parseInt(row.calls)||0)*PTS.calls
+         + (parseInt(row.emails)||0)*PTS.emails;
+}
+
+function parseCSV(text) {
+    const lines = text.trim().split('\n').map(l => l.trim()).filter(l => l);
+    if (lines.length < 2) return [];
+    const headers = lines[0].split(',').map(h => h.trim().replace(/"/g,'').toLowerCase());
+    return lines.slice(1).map(line => {
+        const vals = line.match(/(".*?"|[^,]+|(?<=,)(?=,)|(?<=,)$|^(?=,))/g) || line.split(',');
+        const row = {};
+        headers.forEach((h, i) => {
+            row[h] = (vals[i]||'').replace(/"/g,'').trim();
+        });
+        return row;
+    });
+}
+
+function colMap(rows) {
+    if (!rows.length) return {};
+    const h = Object.keys(rows[0]).map(k => k.toLowerCase());
+    const find = (...terms) => h.find(k => terms.some(t => k.includes(t))) || h[0];
+    return {
+        rep: find('rep name', 'rep'),
+        calls: find('calls made', 'calls'),
+        emails: find('emails sent', 'emails'),
+        meetings: find('meetings booked', 'meetings'),
+        registrations: find('deal reg', 'registrations', 'reg'),
+        deals: find('deals booked', 'deals'),
+    };
+}
+
+function renderLeaderboard(rows) {
+    const cols = colMap(rows);
+    const data = rows.map(r => ({
+        name: r[cols.rep] || '?',
+        calls: parseInt(r[cols.calls])||0,
+        emails: parseInt(r[cols.emails])||0,
+        meetings: parseInt(r[cols.meetings])||0,
+        registrations: parseInt(r[cols.registrations])||0,
+        deals: parseInt(r[cols.deals])||0,
+        get pts() { return this.deals*PTS.deals + this.meetings*PTS.meetings + this.registrations*PTS.registrations + this.calls*PTS.calls + this.emails*PTS.emails; }
+    })).sort((a,b) => b.pts - a.pts);
+
+    // Category leaders
+    const mostDeals = [...data].sort((a,b) => b.deals - a.deals)[0];
+    const mostMeetings = [...data].sort((a,b) => b.meetings - a.meetings)[0];
+    const mostCalls = [...data].sort((a,b) => b.calls - a.calls)[0];
+    const mostEmails = [...data].sort((a,b) => b.emails - a.emails)[0];
+
+    document.getElementById('categoryLeaders').innerHTML = `
+        <div class="leader-card"><div class="lc-icon">&#128293;</div><div class="lc-title">Most Deals</div><div class="lc-name">${mostDeals.name}</div><div class="lc-val">${mostDeals.deals} deals</div></div>
+        <div class="leader-card"><div class="lc-icon">&#128203;</div><div class="lc-title">Most Meetings</div><div class="lc-name">${mostMeetings.name}</div><div class="lc-val">${mostMeetings.meetings} meetings</div></div>
+        <div class="leader-card"><div class="lc-icon">&#128222;</div><div class="lc-title">Most Calls</div><div class="lc-name">${mostCalls.name}</div><div class="lc-val">${mostCalls.calls} calls</div></div>
+        <div class="leader-card"><div class="lc-icon">&#128140;</div><div class="lc-title">Most Emails</div><div class="lc-name">${mostEmails.name}</div><div class="lc-val">${mostEmails.emails} emails</div></div>
+    `;
+
+    // Individual table
+    let tableHTML = `<table>
+        <thead><tr><th style="text-align:center;">#</th><th>Rep</th><th>Points</th><th>Deals</th><th>Meetings</th><th>Regs</th><th>Calls</th><th>Emails</th></tr></thead>
+        <tbody>`;
+    data.forEach((rep, i) => {
+        const rank = i + 1;
+        const medal = rank === 1 ? '&#127941;' : rank === 2 ? '&#129352;' : rank === 3 ? '&#129353;' : '';
+        tableHTML += `<tr>
+            <td class="rank rank-${rank}">${medal || rank}</td>
+            <td class="rep-name">${rep.name}</td>
+            <td class="points">${rep.pts.toLocaleString()}</td>
+            <td>${rep.deals}</td>
+            <td>${rep.meetings}</td>
+            <td>${rep.registrations}</td>
+            <td>${rep.calls}</td>
+            <td>${rep.emails}</td>
+        </tr>`;
+    });
+    tableHTML += '</tbody></table>';
+    document.getElementById('leaderboardBody').innerHTML = tableHTML;
+}
+
+function renderDemo() {
+    const demo = [
+        {name:'Ashfaqul Deep',calls:28,emails:22,meetings:3,registrations:2,deals:1},
+        {name:'Zest Zhang',calls:24,emails:18,meetings:2,registrations:1,deals:1},
+        {name:'Reinaldo Halim',calls:20,emails:15,meetings:2,registrations:2,deals:0},
+        {name:'Graeme Cavanagh',calls:19,emails:14,meetings:1,registrations:1,deals:0},
+        {name:'Ketaki Rane',calls:17,emails:12,meetings:1,registrations:0,deals:0},
+        {name:'Brandon Wu',calls:15,emails:10,meetings:0,registrations:1,deals:0},
+        {name:'Krista McDonald',calls:14,emails:9,meetings:1,registrations:0,deals:0},
+        {name:'Abbas Daredia',calls:12,emails:8,meetings:0,registrations:0,deals:0},
+        {name:'Humayun Motiwala',calls:11,emails:7,meetings:0,registrations:0,deals:0},
+        {name:'Josiah McPherson',calls:10,emails:6,meetings:0,registrations:0,deals:0},
+        {name:'Arpit Kileda',calls:9,emails:5,meetings:0,registrations:0,deals:0},
+        {name:'Kanav Sharma',calls:8,emails:4,meetings:0,registrations:0,deals:0},
+        {name:'Muhammad Hamza',calls:7,emails:3,meetings:0,registrations:0,deals:0},
+        {name:'Meryl Howsam',calls:5,emails:2,meetings:0,registrations:0,deals:0},
+        {name:'Mariel Barbaza',calls:3,emails:1,meetings:0,registrations:0,deals:0},
+    ].map(r => ({...r, pts: r.deals*PTS.deals + r.meetings*PTS.meetings + r.registrations*PTS.registrations + r.calls*PTS.calls + r.emails*PTS.emails}))
+    .sort((a,b) => b.pts - a.pts);
+
+    const mostDeals = [...demo].sort((a,b) => b.deals - a.deals)[0];
+    const mostMeetings = [...demo].sort((a,b) => b.meetings - a.meetings)[0];
+    const mostCalls = [...demo].sort((a,b) => b.calls - a.calls)[0];
+    const mostEmails = [...demo].sort((a,b) => b.emails - a.emails)[0];
+
+    document.getElementById('categoryLeaders').innerHTML = `
+        <div class="leader-card"><div class="lc-icon">&#128293;</div><div class="lc-title">Most Deals</div><div class="lc-name">${mostDeals.name}</div><div class="lc-val">${mostDeals.deals} deals</div></div>
+        <div class="leader-card"><div class="lc-icon">&#128203;</div><div class="lc-title">Most Meetings</div><div class="lc-name">${mostMeetings.name}</div><div class="lc-val">${mostMeetings.meetings} meetings</div></div>
+        <div class="leader-card"><div class="lc-icon">&#128222;</div><div class="lc-title">Most Calls</div><div class="lc-name">${mostCalls.name}</div><div class="lc-val">${mostCalls.calls} calls</div></div>
+        <div class="leader-card"><div class="lc-icon">&#128140;</div><div class="lc-title">Most Emails</div><div class="lc-name">${mostEmails.name}</div><div class="lc-val">${mostEmails.emails} emails</div></div>
+    `;
+
+    let tableHTML = `<table>
+        <thead><tr><th style="text-align:center;">#</th><th>Rep</th><th>Points</th><th>Deals</th><th>Meetings</th><th>Regs</th><th>Calls</th><th>Emails</th></tr></thead>
+        <tbody>`;
+    demo.forEach((rep, i) => {
+        const rank = i + 1;
+        const medal = rank === 1 ? '&#127941;' : rank === 2 ? '&#129352;' : rank === 3 ? '&#129353;' : '';
+        tableHTML += `<tr>
+            <td class="rank rank-${rank}">${medal || rank}</td>
+            <td class="rep-name">${rep.name}</td>
+            <td class="points">${rep.pts.toLocaleString()}</td>
+            <td>${rep.deals}</td>
+            <td>${rep.meetings}</td>
+            <td>${rep.registrations}</td>
+            <td>${rep.calls}</td>
+            <td>${rep.emails}</td>
+        </tr>`;
+    });
+    tableHTML += '</tbody></table>';
+    document.getElementById('leaderboardBody').innerHTML = tableHTML;
+}
+
+// Load data
+if (SHEET_URL.includes('PLACEHOLDER')) {
+    renderDemo();
+    document.getElementById('lastUpdated').textContent = '\u26a0\ufe0f Preview mode \u2014 connect Google Sheet to load live data';
+} else if (window.location.protocol === 'file:') {
+    renderDemo();
+    document.getElementById('lastUpdated').textContent = '\u26a0\ufe0f Preview mode \u2014 upload to GitHub Pages to load live data';
+} else {
+    fetch(SHEET_URL)
+        .then(r => {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.text();
+        })
+        .then(text => {
+            const rows = parseCSV(text);
+            if (!rows.length) {
+                document.getElementById('leaderboardBody').innerHTML = '<div class="no-data">No data in sheet yet. Add some activity to see the leaderboard!</div>';
+                document.getElementById('lastUpdated').textContent = 'Sheet is empty \u2014 add data to get started';
+                return;
+            }
+            renderLeaderboard(rows);
+            document.getElementById('lastUpdated').textContent = '\ud83d\udd04 Last updated: ' + new Date().toLocaleString();
+        })
+        .catch(err => {
+            renderDemo();
+            document.getElementById('lastUpdated').textContent = '\u26a0\ufe0f Could not load sheet \u2014 showing preview data';
+        });
+}
+</script>
+</body>
+</html>

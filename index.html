@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softchoice × Canva Partnership Opportunities - Spring 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a6b3c 0%, #2ecc71 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a6b3c 0%, #27ae60 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .header p { font-size: 1.2em; opacity: 0.95; }
+        .incentive-banner {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            margin: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(245,87,108,0.3);
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+        .incentive-banner h2 {
+            font-size: 2em; margin-bottom: 15px;
+            display: flex; align-items: center; justify-content: center; gap: 15px;
+        }
+        .incentive-banner p { font-size: 1.1em; line-height: 1.6; }
+        .incentive-banner .deadline {
+            font-size: 1.3em; font-weight: bold; margin-top: 10px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px; border-radius: 10px; display: inline-block;
+        }
+        .controls {
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .rep-selector {
+            display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+        }
+        .rep-selector label { font-size: 1.1em; font-weight: 600; color: #333; }
+        .rep-selector select {
+            flex: 1; min-width: 220px; padding: 12px 20px; font-size: 1em;
+            border: 2px solid #27ae60; border-radius: 10px; background: white;
+            cursor: pointer; transition: all 0.3s;
+        }
+        .rep-selector select:hover { border-color: #1a8a4a; box-shadow: 0 4px 12px rgba(39,174,96,0.2); }
+        .filter-controls {
+            display: flex; align-items: center; gap: 20px; margin-top: 15px;
+            padding: 15px; background: white; border-radius: 10px;
+            border: 2px solid #e9ecef; flex-wrap: wrap;
+        }
+        .filter-controls label { font-size: 1em; font-weight: 600; color: #333; white-space: nowrap; }
+        .filter-controls select {
+            min-width: 190px; padding: 12px 20px; font-size: 1em;
+            border: 2px solid #27ae60; border-radius: 10px; background: white;
+            cursor: pointer; transition: all 0.3s;
+        }
+        .filter-controls select:hover { border-color: #1a8a4a; box-shadow: 0 4px 12px rgba(39,174,96,0.2); }
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px; padding: 30px; background: #fff;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #1a6b3c 0%, #27ae60 100%);
+            color: white; padding: 25px; border-radius: 15px;
+            text-align: center; box-shadow: 0 8px 20px rgba(39,174,96,0.3);
+        }
+        .stat-card.progress-card {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            box-shadow: 0 8px 20px rgba(56,239,125,0.3);
+        }
+        .stat-card h3 { font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; opacity: 0.9; }
+        .stat-card .value { font-size: 2.5em; font-weight: bold; margin-bottom: 5px; }
+        .progress-bar-container { margin-top: 8px; background: rgba(255,255,255,0.3); border-radius: 10px; height: 8px; }
+        .progress-bar-fill { background: white; height: 8px; border-radius: 10px; transition: width 0.5s ease; }
+        .actions-bar {
+            padding: 20px 30px; background: #f8f9fa;
+            border-top: 2px solid #e9ecef;
+            display: flex; gap: 15px; flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 24px; font-size: 1em; font-weight: 600;
+            border: none; border-radius: 10px; cursor: pointer;
+            transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #27ae60 0%, #1a6b3c 100%);
+            color: white; box-shadow: 0 4px 15px rgba(39,174,96,0.3);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(39,174,96,0.4); }
+        .btn-secondary { background: #6c757d; color: white; }
+        .btn-secondary:hover { background: #5a6268; }
+        .btn-danger { background: #dc3545; color: white; font-size: 0.85em; padding: 8px 14px; }
+        .btn-danger:hover { background: #c82333; }
+        .talking-points {
+            padding: 30px; background: #fff9e6;
+            border-left: 5px solid #ffc107; margin: 0 30px 30px; border-radius: 10px;
+        }
+        .talking-points h3 { color: #856404; margin-bottom: 15px; font-size: 1.3em; }
+        .talking-points ul { list-style-position: inside; color: #856404; }
+        .talking-points li { margin-bottom: 8px; line-height: 1.6; }
+        .accounts-table-container { padding: 30px; overflow-x: auto; }
+        .section-header {
+            display: flex; align-items: center; gap: 12px;
+            margin-bottom: 16px; margin-top: 30px;
+        }
+        .section-header:first-child { margin-top: 0; }
+        .section-header h3 { font-size: 1.2em; color: #333; }
+        .section-badge {
+            padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 700;
+        }
+        .badge-todo { background: #e3f2fd; color: #1565c0; }
+        .badge-done { background: #e8f5e9; color: #2e7d32; }
+        table {
+            width: 100%; border-collapse: collapse; background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden;
+            margin-bottom: 10px;
+        }
+        thead { background: linear-gradient(135deg, #1a6b3c 0%, #27ae60 100%); color: white; }
+        thead.followup-head { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #444; }
+        th {
+            padding: 15px; text-align: left; font-weight: 600;
+            font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        td { padding: 12px 15px; border-bottom: 1px solid #e9ecef; vertical-align: middle; }
+        tbody tr { transition: background 0.2s; }
+        tbody tr:hover { background: #f8f9fa; }
+        tbody tr.contacted-row { opacity: 0.65; background: #f0fff4; }
+        tbody tr.contacted-row:hover { background: #e8f5e9; opacity: 0.8; }
+        .tier-badge {
+            display: inline-block; padding: 5px 10px; border-radius: 20px;
+            font-size: 0.8em; font-weight: 600; white-space: nowrap;
+        }
+        .tier-1 { background: #ff6b6b; color: white; }
+        .tier-2 { background: #ffa500; color: white; }
+        .tier-3 { background: #4ecdc4; color: white; }
+        .tier-4 { background: #95e1d3; color: #333; }
+        .tier-5 { background: #dfe6e9; color: #666; }
+        .opportunity { font-weight: bold; color: #27ae60; font-size: 1.05em; }
+        .no-data { text-align: center; padding: 60px 30px; color: #999; font-size: 1.2em; }
+        .contacted-badge {
+            display: inline-flex; align-items: center; gap: 5px;
+            background: #d4edda; color: #155724;
+            padding: 4px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600;
+        }
+        .btn-contact {
+            padding: 7px 14px; font-size: 0.82em; font-weight: 600;
+            border: 2px solid #27ae60; border-radius: 8px;
+            background: white; color: #27ae60; cursor: pointer;
+            transition: all 0.2s; white-space: nowrap;
+        }
+        .btn-contact:hover { background: #27ae60; color: white; transform: translateY(-1px); }
+        .btn-undo {
+            padding: 5px 10px; font-size: 0.78em; font-weight: 600;
+            border: 1px solid #6c757d; border-radius: 6px;
+            background: white; color: #6c757d; cursor: pointer;
+            transition: all 0.2s; margin-left: 6px;
+        }
+        .btn-undo:hover { background: #6c757d; color: white; }
+        .footer {
+            background: #2d3436; color: white; padding: 20px;
+            text-align: center; font-size: 0.9em;
+        }
+        .legend { padding: 20px 30px; background: #f8f9fa; border-radius: 10px; margin: 0 30px 20px; }
+        .legend h4 { margin-bottom: 15px; color: #333; }
+        .legend-items { display: flex; gap: 20px; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 10px; }
+        .followup-divider {
+            border: none; border-top: 2px dashed #c8e6c9;
+            margin: 30px 0 15px; 
+        }
+        .toast {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #155724; color: white;
+            padding: 14px 22px; border-radius: 12px;
+            font-weight: 600; font-size: 0.95em;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            transform: translateY(100px); opacity: 0;
+            transition: all 0.35s ease;
+            z-index: 999;
+        }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .incentive-banner h2 { font-size: 1.5em; }
+            .stats-container { grid-template-columns: 1fr 1fr; }
+            table { font-size: 0.85em; }
+            th, td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- PIN LOCK SCREEN -->
+    <div id="pinOverlay" style="
+        position: fixed; inset: 0; z-index: 9999;
+        background: linear-gradient(135deg, #1a6b3c 0%, #27ae60 100%);
+        display: flex; align-items: center; justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    ">
+        <div style="
+            background: white; border-radius: 24px;
+            padding: 50px 44px; text-align: center;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+            max-width: 380px; width: 90%;
+        ">
+            <div style="font-size: 3em; margin-bottom: 12px;">🎯</div>
+            <h2 style="font-size: 1.6em; color: #222; margin-bottom: 6px;">Softchoice × Canva</h2>
+            <p style="color: #666; margin-bottom: 32px; font-size: 1em;">Spring 2026 Sales Blitz</p>
+
+            <p style="font-weight: 600; color: #333; margin-bottom: 14px; font-size: 0.95em;">Enter your access code</p>
+
+            <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 10px;">
+                <input id="p1" type="password" maxlength="1" inputmode="numeric" pattern="[0-9]"
+                    style="width:52px;height:60px;font-size:1.8em;text-align:center;border:2px solid #e0e0e0;border-radius:12px;outline:none;transition:border-color 0.2s;"
+                    oninput="pinNext(this,'p2')" onfocus="this.style.borderColor='#27ae60'" onblur="this.style.borderColor='#e0e0e0'">
+                <input id="p2" type="password" maxlength="1" inputmode="numeric" pattern="[0-9]"
+                    style="width:52px;height:60px;font-size:1.8em;text-align:center;border:2px solid #e0e0e0;border-radius:12px;outline:none;transition:border-color 0.2s;"
+                    oninput="pinNext(this,'p3')" onfocus="this.style.borderColor='#27ae60'" onblur="this.style.borderColor='#e0e0e0'">
+                <input id="p3" type="password" maxlength="1" inputmode="numeric" pattern="[0-9]"
+                    style="width:52px;height:60px;font-size:1.8em;text-align:center;border:2px solid #e0e0e0;border-radius:12px;outline:none;transition:border-color 0.2s;"
+                    oninput="pinNext(this,'p4')" onfocus="this.style.borderColor='#27ae60'" onblur="this.style.borderColor='#e0e0e0'">
+                <input id="p4" type="password" maxlength="1" inputmode="numeric" pattern="[0-9]"
+                    style="width:52px;height:60px;font-size:1.8em;text-align:center;border:2px solid #e0e0e0;border-radius:12px;outline:none;transition:border-color 0.2s;"
+                    oninput="checkPin()" onfocus="this.style.borderColor='#27ae60'" onblur="this.style.borderColor='#e0e0e0'">
+            </div>
+
+            <p id="pinError" style="color:#e74c3c;font-size:0.9em;min-height:20px;margin-bottom:16px;"></p>
+
+            <p style="color:#aaa;font-size:0.82em;margin-top:8px;">Access code provided by your Canva partner team</p>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            var _k = [50,52,54,52];
+            if (sessionStorage.getItem('sc_blitz_auth') === 'ok') {
+                document.getElementById('pinOverlay').style.display = 'none';
+                return;
+            }
+            document.getElementById('p1').focus();
+
+            window.pinNext = function(el, nextId) {
+                if (el.value.length === 1) document.getElementById(nextId).focus();
+            };
+
+            window.checkPin = function() {
+                var entered = ['p1','p2','p3','p4'].map(function(id){ return document.getElementById(id).value; }).join('');
+                if (entered.length < 4) return;
+                var correct = _k.map(function(c){ return String.fromCharCode(c); }).join('');
+                if (entered === correct) {
+                    sessionStorage.setItem('sc_blitz_auth', 'ok');
+                    var overlay = document.getElementById('pinOverlay');
+                    overlay.style.transition = 'opacity 0.4s';
+                    overlay.style.opacity = '0';
+                    setTimeout(function(){ overlay.style.display = 'none'; }, 400);
+                } else {
+                    document.getElementById('pinError').textContent = 'Incorrect code \u2014 please try again';
+                    ['p1','p2','p3','p4'].forEach(function(id){
+                        var el = document.getElementById(id);
+                        el.value = '';
+                        el.style.borderColor = '#e74c3c';
+                        setTimeout(function(){ el.style.borderColor = '#e0e0e0'; }, 1000);
+                    });
+                    document.getElementById('p1').focus();
+                }
+            };
+        })();
+    </script>
+
+<div class="container">
+    <div class="header">
+        <h1>🎯 Softchoice × Canva Enterprise Partnership</h1>
+        <p>Spring 2026 Sales Blitz — US Central Opportunity Dashboard</p>
+    </div>
+
+    <div class="incentive-banner">
+        <h2><span>🎁</span> AMAZON GIFT CARD INCENTIVE <span>🎁</span></h2>
+        <p>
+            Book a meeting between Canva and a customer from your account list and <strong>earn a $25 Amazon gift card</strong>!<br>
+            Multiple meetings = Multiple gift cards. There's no limit!
+        </p>
+        <div class="deadline">&#9200; Spring 2026 Blitz &#8212; Act Now!</div>
+    </div>
+
+    <div class="controls">
+        <div class="rep-selector">
+            <label for="repSelect">Select your name:</label>
+            <select id="repSelect" onchange="updateDisplay()">
+                <option value="">&#8212; Choose Your Name &#8212;</option>
+                <option value="abbas daredia">Abbas Daredia</option>
+                <option value="arpit kileda">Arpit Kileda</option>
+                <option value="ashfaqul deep">Ashfaqul Deep</option>
+                <option value="brandon wu">Brandon Wu</option>
+                <option value="graeme cavanagh">Graeme Cavanagh</option>
+                <option value="humayun motiwala">Humayun Motiwala</option>
+                <option value="josiah mcpherson">Josiah Mcpherson</option>
+                <option value="kanav sharma">Kanav Sharma</option>
+                <option value="ketaki rane">Ketaki Rane</option>
+                <option value="krista mcdonald">Krista Mcdonald</option>
+                <option value="mariel barbaza">Mariel Barbaza</option>
+                <option value="meryl howsam">Meryl Howsam</option>
+                <option value="muhammad hamza">Muhammad Hamza</option>
+                <option value="reinaldo halim">Reinaldo Halim</option>
+                <option value="zest zhang">Zest Zhang</option>
+            </select>
+        </div>
+        <div class="filter-controls" id="filterControls" style="display:none;">
+            <label>Priority:</label>
+            <select id="priorityFilter" onchange="updateDisplay()">
+                <option value="all">All Priorities</option>
+                <option value="1">🔥 HOT only</option>
+                <option value="2">🌊 WARM only</option>
+                <option value="3">💡 POTENTIAL only</option>
+                <option value="4">🆕 NEW only</option>
+            </select>
+            <label style="margin-left:10px;">View:</label>
+            <select id="contactedFilter" onchange="updateDisplay()">
+                <option value="all">All Accounts</option>
+                <option value="todo">To Contact Only</option>
+                <option value="done">Follow Up Only</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="stats-container" id="statsContainer" style="display:none;"></div>
+
+    <div class="actions-bar" id="actionsBar" style="display:none;">
+        <a href="leaderboard.html" target="_blank" class="btn" style="background:linear-gradient(135deg,#f39c12,#e74c3c);color:white;text-decoration:none;">&#127942; View Leaderboard</a>
+        <button class="btn btn-primary" onclick="downloadCSV()">&#128229; Export My Accounts (CSV)</button>
+        <button class="btn btn-danger" id="clearBtn" onclick="clearAllContacted()" style="display:none;">&#8634; Reset My Progress</button>
+    </div>
+
+    <div id="legend" style="display:none;">
+        <div class="legend">
+            <h4>Priority Guide</h4>
+            <div class="legend-items">
+                <div class="legend-item"><span class="tier-badge tier-1">🔥 HOT</span><span>10+ paid seats — move billing through Softchoice</span></div>
+                <div class="legend-item"><span class="tier-badge tier-2">🌊 WARM</span><span>High free usage (10+ YAU) — convert to paid</span></div>
+                <div class="legend-item"><span class="tier-badge tier-3">💡 POTENTIAL</span><span>Some usage — educate and upsell</span></div>
+                <div class="legend-item"><span class="tier-badge tier-4">🆕 NEW</span><span>No usage data — cold intro opportunity</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="talkingPointsContainer" style="display:none;"></div>
+
+    <div class="accounts-table-container" id="accountsContainer" style="display:none;"></div>
+
+    <div class="footer">
+        <p>Softchoice × Canva Spring 2026 Sales Blitz &mdash; US Central &mdash; Confidential</p>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const repData = {"abbas daredia":[{"customer":"Nabors Corporate Services, Inc","domain":"nabors.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":55,"paid":15,"opportunity":16500,"type":"Prospect"},{"customer":"Integrated Electrical Services Inc","domain":"ies-co.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":47,"paid":17,"opportunity":14100,"type":"Prospect"},{"customer":"Velocity Credit Union","domain":"velocitycu.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":24,"paid":10,"opportunity":7200,"type":"Prospect"},{"customer":"Zenbusiness Inc.","domain":"zenbusiness.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":68,"paid":10,"opportunity":20400,"type":"Prospect"},{"customer":"Firefly Aerospace Inc.","domain":"fireflyspace.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":29,"paid":14,"opportunity":8700,"type":"Prospect"},{"customer":"Kaneka Americas Holding, Inc.","domain":"kaneka.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":13,"paid":2,"opportunity":3900,"type":"Prospect"},{"customer":"Silicon Laboratories Inc.","domain":"silabs.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":59,"paid":4,"opportunity":17700,"type":"Prospect"},{"customer":"Silicon Laboratories Inc.","domain":"silabs.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":59,"paid":4,"opportunity":17700,"type":"Prospect"},{"customer":"Sonic Healthcare Usa, Inc.","domain":"sonichealthcareusa.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":17,"paid":8,"opportunity":5100,"type":"Prospect"},{"customer":"Sonic Healthcare Usa, Inc.","domain":"sonichealthcareusa.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":17,"paid":8,"opportunity":5100,"type":"Prospect"},{"customer":"Germania Farm Mutual Insurance Association","domain":"germaniainsurance.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":15,"paid":9,"opportunity":4500,"type":"Prospect"},{"customer":"Sun Coast Resources, Inc.","domain":"suncoastresources.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":12,"paid":1,"opportunity":3600,"type":"Prospect"},{"customer":"Saexploration Inc","domain":"saexploration.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":3,"paid":0,"opportunity":900,"type":"Prospect"},{"customer":"Propetro Services, Inc.","domain":"propetroservices.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":3,"paid":1,"opportunity":900,"type":"Prospect"},{"customer":"Total Safety U.S., Inc.","domain":"totalsafety.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":7,"paid":9,"opportunity":2100,"type":"Prospect"},{"customer":"SynergenX Health Holdings, LLC","domain":"synergenxhealth.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Bexar County Hospital District","domain":"","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Texas Pipe And Supply Company, Ltd","domain":"stpinc.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""}],"arpit kileda":[{"customer":"Accel Entertainment Gaming, LLC","domain":"accelentertainment.com","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":32,"paid":22,"opportunity":9600,"type":"Prospect"},{"customer":"Merieux Nutrisciences Corporation","domain":"mxns.com","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":773,"paid":42,"opportunity":231900,"type":"Prospect"},{"customer":"Comarch Inc","domain":"comarch.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":86,"paid":3,"opportunity":25800,"type":"Prospect"},{"customer":"Femwell Group Health, LLC","domain":"femwell.com","state":"Florida","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":45,"paid":6,"opportunity":13500,"type":"Prospect"},{"customer":"Hanchett Paper Company","domain":"shorr.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":12,"paid":6,"opportunity":3600,"type":"Prospect"},{"customer":"Newly Weds Foods (Us)","domain":"newlywedsfoods.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":27,"paid":5,"opportunity":8100,"type":"Prospect"},{"customer":"Newly Weds Foods (Us)","domain":"newlywedsfoods.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":27,"paid":5,"opportunity":8100,"type":"Prospect"},{"customer":"Turck Inc","domain":"turck.com","state":"Minnesota","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":36,"paid":7,"opportunity":10800,"type":"Prospect"},{"customer":"Beltmann Group Incorporated","domain":"beltmann.com","state":"Minnesota","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":13,"paid":8,"opportunity":3900,"type":"Prospect"},{"customer":"Duly Health and Care","domain":"dulyhealthandcare.com","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":2,"paid":1,"opportunity":600,"type":""},{"customer":"La Rabida Childrens Hospital","domain":"larabida.org","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":5,"paid":1,"opportunity":1500,"type":""},{"customer":"UNITE HERE HEALTH","domain":"uhh.org","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":2,"paid":3,"opportunity":600,"type":""},{"customer":"Weaver Consultants Group North Central Llc","domain":"wcgcorp.com","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":0,"opportunity":300,"type":""},{"customer":"UNITE HERE HEALTH","domain":"uhh.org","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":2,"paid":3,"opportunity":600,"type":""},{"customer":"Wunderlich-Malec Engineering, Inc","domain":"wmeng.com","state":"Minnesota","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":8,"paid":5,"opportunity":2400,"type":"Prospect"}],"ashfaqul deep":[{"customer":"Shearer's Foods, Llc","domain":"shearers.com","state":"Ohio","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":37,"paid":15,"opportunity":11100,"type":"Prospect"},{"customer":"Granite Properties","domain":"graniteprop.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":40,"paid":24,"opportunity":12000,"type":"Prospect"},{"customer":"Mri Software Llc","domain":"mrisoftware.com","state":"Ohio","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":211,"paid":106,"opportunity":63300,"type":"Prospect"},{"customer":"Mri Software Llc","domain":"mrisoftware.com","state":"Ohio","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":211,"paid":106,"opportunity":63300,"type":"Prospect"},{"customer":"Mri Software Llc","domain":"mrisoftware.com","state":"Ohio","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":211,"paid":106,"opportunity":63300,"type":"Prospect"},{"customer":"Mri Software Llc","domain":"mrisoftware.com","state":"Ohio","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":211,"paid":106,"opportunity":63300,"type":"Prospect"},{"customer":"Timken Company","domain":"timken.com","state":"Ohio","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":107,"paid":28,"opportunity":32100,"type":"Prospect"},{"customer":"Hyland Software, Inc","domain":"hyland.com","state":"Ohio","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":68,"paid":23,"opportunity":20400,"type":"Prospect"},{"customer":"Hyland Software, Inc","domain":"hyland.com","state":"Ohio","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":68,"paid":23,"opportunity":20400,"type":"Prospect"},{"customer":"Park National Bank","domain":"parknationalbank.com","state":"Ohio","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":19,"paid":17,"opportunity":5700,"type":"Prospect"},{"customer":"Covelli Enterprises, Inc.","domain":"covelli.com","state":"Ohio","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":10,"paid":5,"opportunity":3000,"type":"Prospect"},{"customer":"Communitycare Hmo Inc","domain":"communitycare.com","state":"Oklahoma","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":22,"paid":7,"opportunity":6600,"type":"Prospect"},{"customer":"Associated Materials, LLC","domain":"associatedmaterials.com","state":"Ohio","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":14,"paid":6,"opportunity":4200,"type":"Prospect"},{"customer":"Irisndt Corp","domain":"irisndt.com","state":"Alberta","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":12,"paid":3,"opportunity":3600,"type":"Prospect"},{"customer":"Infocision Management Inc","domain":"infocision.com","state":"Ohio","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":13,"paid":0,"opportunity":3900,"type":"Prospect"},{"customer":"School Specialty","domain":"schoolspecialty.com","state":"Wisconsin","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":38,"paid":6,"opportunity":11400,"type":"Prospect"},{"customer":"Akron Childrens Hospital","domain":"akronchildrens.org","state":"Ohio","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":46,"paid":3,"opportunity":13800,"type":"Prospect"},{"customer":"Zekelman Industries, Inc.","domain":"zekelman.com","state":"Ohio","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":45,"paid":7,"opportunity":13500,"type":"Prospect"},{"customer":"Rpm International Inc.","domain":"rpminc.com","state":"Ohio","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":9,"paid":3,"opportunity":2700,"type":"Prospect"},{"customer":"Farmers National Bank","domain":"farmersbankgroup.com","state":"Ohio","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":2,"opportunity":300,"type":"Prospect"},{"customer":"Iowa Network Services","domain":"aureon.com","state":"Iowa","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":6,"paid":1,"opportunity":1800,"type":"Prospect"},{"customer":"Omni Mgmt Group, LLC","domain":"theomnigroup.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":0,"opportunity":300,"type":""},{"customer":"O'Neil And Associates, Inc.","domain":"oneil.com","state":"Ohio","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":5,"paid":1,"opportunity":1500,"type":""},{"customer":"Victory Capital Management Inc.","domain":"vcm.com","state":"Ohio","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":5,"paid":2,"opportunity":1500,"type":"Prospect"},{"customer":"Trilogy Medwaste, Inc.","domain":"trilogymedwaste.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":2,"paid":3,"opportunity":600,"type":""},{"customer":"Bellwether Enterprise Real Estate Capital LLC","domain":"bwe.com","state":"Ohio","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":7,"paid":1,"opportunity":2100,"type":"Prospect"},{"customer":"EIS Holdings, LLC","domain":"eisholdings.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":4,"paid":2,"opportunity":1200,"type":"Prospect"},{"customer":"Sentinel Risk Advisors, LLC","domain":"sentinelra.com","state":"North Carolina","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":0,"opportunity":300,"type":""},{"customer":"The Muransky Companies","domain":"muranskyco.com","state":"Ohio","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Soltis, Tangeman, Jones, Kormushoff, Maxen & Kenney, Incorporated","domain":"stpinc.com","state":"Ohio","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"First United Bank","domain":"firstunited.bank","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Community America Credit Union","domain":"communityamerica.com","state":"Kansas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Apave America Inc.","domain":"apave.com","state":"Texas","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":887,"paid":16,"opportunity":266100,"type":"Existing Customer"},{"customer":"Apave North America Corp","domain":"apave.com","state":"Alberta","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":887,"paid":16,"opportunity":266100,"type":"Existing Customer"}],"brandon wu":[{"customer":"Imprivata","domain":"imprivata.com","state":"Massachusetts","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":41,"paid":11,"opportunity":12300,"type":"Prospect"},{"customer":"Onit, Inc.","domain":"onit.com","state":"Georgia","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":41,"paid":28,"opportunity":12300,"type":"Prospect"},{"customer":"Hilcorp Energy Company","domain":"hilcorp.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":39,"paid":17,"opportunity":11700,"type":"Prospect"},{"customer":"Apex Systems Inc.","domain":"apexsystems.com","state":"Virginia","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":166,"paid":35,"opportunity":49800,"type":"Prospect"},{"customer":"Document Crunch, Inc","domain":"documentcrunch.com","state":"Georgia","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":21,"paid":15,"opportunity":6300,"type":""},{"customer":"Peregrine II Management Operations, LLC","domain":"peregrinehg.com","state":"Colorado","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":22,"paid":11,"opportunity":6600,"type":"Prospect"},{"customer":"Bdp International, Inc.","domain":"psabdp.com","state":"Pennsylvania","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":34,"paid":7,"opportunity":10200,"type":"Prospect"},{"customer":"Golden Pass LNG Terminal LLC","domain":"goldenpasslng.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":18,"paid":2,"opportunity":5400,"type":""},{"customer":"Fervo Energy Company","domain":"fervoenergy.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":24,"paid":2,"opportunity":7200,"type":""},{"customer":"Bluesight, Inc","domain":"bluesight.com","state":"Virginia","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":20,"paid":7,"opportunity":6000,"type":""},{"customer":"Sunny Sky Products, LLC","domain":"sunnyskyproducts.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":12,"paid":1,"opportunity":3600,"type":""},{"customer":"Inguran, LLC","domain":"stgen.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":18,"paid":2,"opportunity":5400,"type":""},{"customer":"Bigge Crane & Rigging Co","domain":"bigge.com","state":"California","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":5,"paid":1,"opportunity":1500,"type":"Prospect"},{"customer":"Repairify, Inc","domain":"repairify.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":4,"paid":0,"opportunity":1200,"type":""},{"customer":"Midwest Medical Transport","domain":"mmtamb.com","state":"Nebraska","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":6,"paid":2,"opportunity":1800,"type":""},{"customer":"CorroHealth, LLC","domain":"corrohealth.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":8,"paid":4,"opportunity":2400,"type":"Prospect"},{"customer":"Nutex Health, Inc","domain":"nutexhealth.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":6,"paid":5,"opportunity":1800,"type":"Prospect"},{"customer":"Harvest Midstream Company","domain":"harvestmidstream.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":5,"paid":2,"opportunity":1500,"type":""},{"customer":"USA Debusk, LLC","domain":"usadebusk.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":7,"paid":1,"opportunity":2100,"type":"Prospect"},{"customer":"Western Midstream Operating, LP","domain":"westernmidstream.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":9,"paid":0,"opportunity":2700,"type":"Prospect"},{"customer":"USA Debusk, LLC","domain":"usadebusk.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":7,"paid":1,"opportunity":2100,"type":"Prospect"},{"customer":"Deposition Solutions LLC","domain":"depsolutions.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Solaris Water Midstream, LLC","domain":"solariswater.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Tinder LLC","domain":"tinder.com","state":"California","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":"Prospect"},{"customer":"USOC Biomedical, LLC","domain":"usocbiomedical.com","state":"California","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Match Group, Inc.","domain":"matchgroup.com","state":"Texas","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":0,"paid":0,"opportunity":0,"type":"Existing Customer"},{"customer":"Tinder LLC","domain":"tinder.com","state":"California","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":0,"paid":0,"opportunity":0,"type":"Existing Customer"},{"customer":"Match Group, Inc.","domain":"matchgroup.com","state":"Texas","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":0,"paid":0,"opportunity":0,"type":"Existing Customer"}],"graeme cavanagh":[{"customer":"Sims Metal Management (Formerly Metal Management)","domain":"simsmm.com","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":40,"paid":26,"opportunity":12000,"type":"Prospect"},{"customer":"Crescent Electric Supply Co","domain":"cesco.com","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":25,"paid":14,"opportunity":7500,"type":"Prospect"},{"customer":"Healthcare Information & Management Systems Society","domain":"himss.org","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":37,"paid":16,"opportunity":11100,"type":"Prospect"},{"customer":"Healthcare Information & Management Systems Society","domain":"himss.org","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":37,"paid":16,"opportunity":11100,"type":"Prospect"},{"customer":"Healthcare Information & Management Systems Society","domain":"himss.org","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":37,"paid":16,"opportunity":11100,"type":"Prospect"},{"customer":"Power Construction Company, LLC","domain":"powerconstruction.net","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":34,"paid":20,"opportunity":10200,"type":"Prospect"},{"customer":"BCBSM, Inc.","domain":"bcbsm.com","state":"Minnesota","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":56,"paid":23,"opportunity":16800,"type":"Prospect"},{"customer":"Infios (Previously Koerber)","domain":"koerber.com","state":"Minnesota","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":146,"paid":23,"opportunity":43800,"type":"Prospect"},{"customer":"United Center Joint Venture","domain":"unitedcenter.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":10,"paid":5,"opportunity":3000,"type":"Prospect"},{"customer":"Winmark Corporation","domain":"winmarkcorporation.com","state":"Minnesota","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":11,"paid":1,"opportunity":3300,"type":"Prospect"},{"customer":"Liberty Diversified International","domain":"libertydiversified.com","state":"Minnesota","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":10,"paid":5,"opportunity":3000,"type":"Prospect"},{"customer":"Ita Group Inc.","domain":"itagroup.com","state":"Iowa","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":17,"paid":0,"opportunity":5100,"type":"Prospect"},{"customer":"United Center Joint Venture","domain":"unitedcenter.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":10,"paid":5,"opportunity":3000,"type":"Prospect"},{"customer":"Glenroy Inc.","domain":"glenroy.com","state":"Wisconsin","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":8,"paid":6,"opportunity":2400,"type":""},{"customer":"Life-Science Innovations","domain":"life-scienceinnovations.com","state":"Minnesota","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":2,"paid":0,"opportunity":600,"type":""},{"customer":"Coughlan Companies, LLC","domain":"coughlancompanies.com","state":"Minnesota","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":0,"opportunity":300,"type":""},{"customer":"Elm One Call Locator, Inc.","domain":"elmllc.com","state":"Illinois","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":"Prospect"},{"customer":"Antea Usa Inc.","domain":"anteagroup.com","state":"Minnesota","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":"Prospect"},{"customer":"Schwan's Shared Services, LLC","domain":"schwancompany.com","state":"Minnesota","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""}],"humayun motiwala":[{"customer":"Shook,Hardy And Bacon Llp","domain":"shb.com","state":"Missouri","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":43,"paid":18,"opportunity":12900,"type":"Prospect"},{"customer":"Dierbergs Markets, Inc.","domain":"dierbergs.com","state":"Missouri","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":13,"paid":8,"opportunity":3900,"type":"Prospect"},{"customer":"Lion Group, Inc","domain":"lionprotects.com","state":"Ohio","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":20,"paid":6,"opportunity":6000,"type":"Prospect"},{"customer":"H. W. Lochner, Inc.","domain":"hwlochner.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":12,"paid":3,"opportunity":3600,"type":"Prospect"},{"customer":"First Community Credit Union","domain":"firstcommunity.com","state":"Missouri","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":9,"paid":2,"opportunity":2700,"type":"Prospect"},{"customer":"LightEdge Solutions, LLC","domain":"lightedge.com","state":"Iowa","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":9,"paid":3,"opportunity":2700,"type":""},{"customer":"Great Plains Health Alliance","domain":"gpha.com","state":"Kansas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":2,"paid":0,"opportunity":600,"type":""},{"customer":"Premium Guard Incorporated","domain":"premiumguard.com","state":"New York","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":5,"paid":2,"opportunity":1500,"type":""},{"customer":"Gm2 Associates, Inc.","domain":"gm2inc.com","state":"Connecticut","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":3,"paid":0,"opportunity":900,"type":""},{"customer":"National Medical Billing Services, L.L.C","domain":"nmbs1.com","state":"Missouri","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":0,"opportunity":300,"type":""},{"customer":"Flywheel Exchange Inc.","domain":"flywheel.io","state":"Minnesota","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":0,"opportunity":300,"type":""},{"customer":"Alternate Solutions Health Network, LLC","domain":"ashealthnet.com","state":"Ohio","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":9,"paid":1,"opportunity":2700,"type":"Prospect"},{"customer":"Peoples National Bank, N.A","domain":"pnb.com","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":6,"paid":0,"opportunity":1800,"type":""},{"customer":"New Directions Behavioral Health Llc","domain":"ndbh.com","state":"Kansas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":3,"paid":2,"opportunity":900,"type":"Prospect"},{"customer":"Focus Financial Partners, LLC","domain":"focusfinancialpartners.com","state":"New York","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Se2, Llc","domain":"se2.com","state":"Kansas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":"Prospect"},{"customer":"Fellowship Of Christian Athletes","domain":"fca.org","state":"Missouri","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":1789,"paid":1348,"opportunity":536700,"type":"Existing Customer"},{"customer":"Safelite Group","domain":"safelite.com","state":"Ohio","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":34,"paid":32,"opportunity":10200,"type":"Existing Customer"}],"josiah mcpherson":[{"customer":"Noble Drilling (u.s.) LLC","domain":"noblecorp.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":43,"paid":15,"opportunity":12900,"type":"Prospect"},{"customer":"Noble Drilling (u.s.) LLC","domain":"noblecorp.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":43,"paid":15,"opportunity":12900,"type":"Prospect"},{"customer":"Carriage Services Inc","domain":"carriageservices.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":28,"paid":20,"opportunity":8400,"type":"Prospect"},{"customer":"Trafigura Ag","domain":"trafigura.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":56,"paid":1,"opportunity":16800,"type":"Prospect"},{"customer":"Core Laboratories Inc","domain":"corelab.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":31,"paid":3,"opportunity":9300,"type":"Prospect"},{"customer":"Ascend Performance Materials Llc","domain":"ascendmaterials.com","state":"Florida","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":23,"paid":2,"opportunity":6900,"type":"Prospect"},{"customer":"Percheron Professional Services, Llc","domain":"percheronllc.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":8,"paid":1,"opportunity":2400,"type":"Prospect"},{"customer":"Spitzer Industries, Inc.","domain":"spitzerind.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":6,"paid":5,"opportunity":1800,"type":"Prospect"},{"customer":"Speedcast Communications, Inc.","domain":"speedcast.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":4,"paid":0,"opportunity":1200,"type":"Prospect"},{"customer":"Stratum Reservoir Intermediate, LLC","domain":"superiorenergy.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":8,"paid":0,"opportunity":2400,"type":"Prospect"},{"customer":"Hulcher Services Inc.","domain":"hulcher.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":0,"opportunity":300,"type":"Prospect"},{"customer":"Stress Engineering Services, Inc.","domain":"stress.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":6,"paid":4,"opportunity":1800,"type":"Prospect"},{"customer":"Nine Energy Service, Inc.","domain":"nineenergyservice.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":0,"opportunity":300,"type":"Prospect"},{"customer":"Race Rock GP, L.L.C","domain":"racerock.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":5,"paid":1,"opportunity":1500,"type":""},{"customer":"Sesi, Llc","domain":"sesi-services.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Puffer- Sweiven Lp","domain":"puffer.com","state":"Texas","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":26,"paid":26,"opportunity":7800,"type":"Existing Customer"}],"kanav sharma":[{"customer":"Greenheck Fan Corporation","domain":"greenheck.com","state":"Wisconsin","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":59,"paid":13,"opportunity":17700,"type":"Prospect"},{"customer":"Smithbucklin Corporation","domain":"smithbucklin.com","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":86,"paid":31,"opportunity":25800,"type":"Prospect"},{"customer":"Badger Meter, Inc.","domain":"badgermeter.com","state":"Wisconsin","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":20,"paid":0,"opportunity":6000,"type":"Prospect"},{"customer":"Hydro Incorporated","domain":"hydroinc.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":12,"paid":7,"opportunity":3600,"type":"Prospect"},{"customer":"Tinuiti","domain":"tinuiti.com","state":"New York","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":224,"paid":8,"opportunity":67200,"type":"Prospect"},{"customer":"The Vollrath Company Llc","domain":"vollrathco.com","state":"Wisconsin","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":9,"paid":1,"opportunity":2700,"type":"Prospect"},{"customer":"Republic Bank Chicago","domain":"republicbank.com","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":7,"paid":6,"opportunity":2100,"type":"Prospect"},{"customer":"Republic Bank Chicago","domain":"republicbank.com","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":7,"paid":6,"opportunity":2100,"type":"Prospect"},{"customer":"Marquette National Corporation","domain":"emarquettebank.com","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":5,"paid":6,"opportunity":1500,"type":""},{"customer":"Flagstone Foods LLC","domain":"flagstonefoods.com","state":"Minnesota","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":3,"paid":3,"opportunity":900,"type":"Prospect"},{"customer":"Fredrikson & Byron","domain":"fredlaw.com","state":"Minnesota","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":9,"paid":3,"opportunity":2700,"type":"Prospect"},{"customer":"Compeer Financial","domain":"compeer.com","state":"Wisconsin","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":45,"paid":63,"opportunity":13500,"type":"Existing Customer"}],"ketaki rane":[{"customer":"American Hospital Association","domain":"aha.org","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":37,"paid":10,"opportunity":11100,"type":"Prospect"},{"customer":"Draper And Kramer Incorporated","domain":"draperandkramer.com","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":23,"paid":26,"opportunity":6900,"type":"Prospect"},{"customer":"Afni, Inc.","domain":"afni.com","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":66,"paid":11,"opportunity":19800,"type":"Prospect"},{"customer":"Thoughtworks Inc","domain":"thoughtworks.com","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":717,"paid":33,"opportunity":215100,"type":"Prospect"},{"customer":"Wiss, Janney, Elstner Associates, Inc.","domain":"wje.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":14,"paid":3,"opportunity":4200,"type":"Prospect"},{"customer":"Formidium Corp","domain":"formidium.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":44,"paid":9,"opportunity":13200,"type":"Prospect"},{"customer":"Compsych Corp","domain":"compsych.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":18,"paid":3,"opportunity":5400,"type":"Prospect"},{"customer":"Silver Cross Hospital and Medical Centers","domain":"silvercross.org","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":30,"paid":1,"opportunity":9000,"type":"Prospect"},{"customer":"Toppan Merrill USA Inc.","domain":"toppanmerrill.com","state":"Minnesota","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":10,"paid":2,"opportunity":3000,"type":"Prospect"},{"customer":"Mille Lacs Health System","domain":"mlhealth.org","state":"Minnesota","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":4,"paid":1,"opportunity":1200,"type":""},{"customer":"Stealth Venture Labs, Inc.","domain":"stealthventurelabs.com","state":"California","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":1,"opportunity":300,"type":""},{"customer":"Heitman Llc","domain":"heitman.com","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":4,"paid":0,"opportunity":1200,"type":""},{"customer":"Brandenburg Industrial Service Company","domain":"brandenburg.com","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":4,"paid":1,"opportunity":1200,"type":""},{"customer":"Labor First LLC","domain":"laborfirst.com","state":"New Jersey","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Amicus, LLC","domain":"amicusli.com","state":"Georgia","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Velocityehs","domain":"ehs.com","state":"Illinois","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":32,"paid":21,"opportunity":9600,"type":"Existing Customer"},{"customer":"Devry University, Inc.","domain":"devry.edu","state":"Illinois","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":140,"paid":72,"opportunity":42000,"type":"Existing Customer"}],"krista mcdonald":[{"customer":"PBK Architects, Inc.","domain":"pbk.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":41,"paid":11,"opportunity":12300,"type":"Prospect"},{"customer":"LGC US Asset Holdings, LLC","domain":"lgcgroup.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":58,"paid":31,"opportunity":17400,"type":"Prospect"},{"customer":"11:11 Systems","domain":"1111systems.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":21,"paid":15,"opportunity":6300,"type":"Prospect"},{"customer":"11:11 Systems","domain":"1111systems.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":21,"paid":15,"opportunity":6300,"type":"Prospect"},{"customer":"11:11 Systems","domain":"1111systems.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":21,"paid":15,"opportunity":6300,"type":"Prospect"},{"customer":"LGC US Asset Holdings, LLC","domain":"lgcgroup.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":58,"paid":31,"opportunity":17400,"type":"Prospect"},{"customer":"Consolidated Electrical Distributors Inc.","domain":"ced.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":18,"paid":7,"opportunity":5400,"type":""},{"customer":"King Ranch Holdings, Inc","domain":"king-ranch.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":10,"paid":2,"opportunity":3000,"type":""},{"customer":"Equipment Depot Texas Inc","domain":"eqdepot.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":39,"paid":6,"opportunity":11700,"type":"Prospect"},{"customer":"Equipment Depot Texas Inc","domain":"eqdepot.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":39,"paid":6,"opportunity":11700,"type":"Prospect"},{"customer":"Lonestar Electric Supply","domain":"lonestarelectricsupply.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":11,"paid":3,"opportunity":3300,"type":""},{"customer":"Seacor Marine Holdings Inc.","domain":"seacormarine.com","state":"Louisiana","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":4,"paid":1,"opportunity":1200,"type":""},{"customer":"Momentum Midstream","domain":"momentummidstream.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":2,"paid":1,"opportunity":600,"type":""},{"customer":"Aramco Services Company","domain":"aramcoservices.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":0,"opportunity":300,"type":"Prospect"},{"customer":"Vinmar International","domain":"vinmar.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":5,"paid":1,"opportunity":1500,"type":""},{"customer":"The Core Group, L.T.D","domain":"thecoregroup.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Sonida Senior Living, Inc","domain":"sonidaseniorliving.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Camp Roofing, Ltd.","domain":"camproofing.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Edge Ofs Holdings LLC","domain":"edgeofs.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"CSAT Solutions, LP","domain":"csat-solutions.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":"Prospect"}],"mariel barbaza":[{"customer":"Alzheimer's Association","domain":"alz.org","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":1049,"paid":388,"opportunity":314700,"type":"Prospect"},{"customer":"HALO Branded Solutions, Inc.","domain":"halo.com","state":"Illinois","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":115,"paid":21,"opportunity":34500,"type":"Prospect"},{"customer":"Build-A-Bear Workshop, Inc.","domain":"buildabear.com","state":"Missouri","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":24,"paid":6,"opportunity":7200,"type":"Prospect"},{"customer":"PM Pediatrics Management Group, LLC","domain":"pmpediatrics.com","state":"New York","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":23,"paid":4,"opportunity":6900,"type":"Prospect"},{"customer":"Hinshaw & Culbertson","domain":"hinshawlaw.com","state":"Illinois","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":11,"paid":1,"opportunity":3300,"type":"Prospect"},{"customer":"Crystal Clean, LLC","domain":"crystal-clean.com","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":7,"paid":0,"opportunity":2100,"type":"Prospect"},{"customer":"Symbria","domain":"symbria.com","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":3,"paid":1,"opportunity":900,"type":"Prospect"},{"customer":"Saul Ewing Llp","domain":"saul.com","state":"Pennsylvania","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":85,"paid":92,"opportunity":25500,"type":"Existing Customer"}],"meryl howsam":[{"customer":"Fuss & O'Neill, Inc","domain":"fando.com","state":"Connecticut","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":11,"paid":3,"opportunity":3300,"type":"Prospect"},{"customer":"Drmp Inc.","domain":"drmp.com","state":"Florida","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":25,"paid":7,"opportunity":7500,"type":"Prospect"},{"customer":"Rinker Design Associates LLC","domain":"rdacivil.com","state":"Virginia","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":4,"paid":3,"opportunity":1200,"type":""},{"customer":"Waggoner Engineering Inc","domain":"waggonereng.com","state":"Mississippi","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":4,"paid":2,"opportunity":1200,"type":""},{"customer":"Trilon Group, LLC","domain":"trilongroup.com","state":"Colorado","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":2,"paid":1,"opportunity":600,"type":""},{"customer":"Cph, LLC","domain":"cphcorp.com","state":"Florida","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":7,"paid":0,"opportunity":2100,"type":"Prospect"},{"customer":"Wilson Engineers, LLC","domain":"wilson-engineers.com","state":"Arizona","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":1,"paid":0,"opportunity":300,"type":""},{"customer":"Carestream Dental Llc","domain":"carestreamdental.com","state":"Georgia","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Epi Consultants","domain":"epi-consultants.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Talbert, Bright & Ellington, Inc.","domain":"tbe-inc.com","state":"North Carolina","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""}],"muhammad hamza":[{"customer":"Ethos Group","domain":"ethosgroup.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":32,"paid":22,"opportunity":9600,"type":"Prospect"},{"customer":"United Regional Health Care System","domain":"unitedregional.org","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":118,"paid":6,"opportunity":35400,"type":"Prospect"},{"customer":"Meriton LLC","domain":"meriton.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":20,"paid":7,"opportunity":6000,"type":"Prospect"},{"customer":"Shermco Industries Inc","domain":"shermco.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":13,"paid":2,"opportunity":3900,"type":"Prospect"},{"customer":"Aligned Data Centers, LLC","domain":"aligneddc.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":26,"paid":2,"opportunity":7800,"type":""},{"customer":"Cinemark Corporation","domain":"cinemark.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":34,"paid":5,"opportunity":10200,"type":"Prospect"},{"customer":"Brg Sports, Inc.","domain":"brgsports.com","state":"Illinois","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":3,"paid":0,"opportunity":900,"type":"Prospect"},{"customer":"Laird Plastics, Inc.","domain":"lairdplastics.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":3,"paid":2,"opportunity":900,"type":"Prospect"},{"customer":"First Service Credit Union","domain":"fscu.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":4,"paid":1,"opportunity":1200,"type":""},{"customer":"Hudson Advisors, L.P.","domain":"hudson-advisors.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":9,"paid":1,"opportunity":2700,"type":"Prospect"},{"customer":"Laird Plastics, Inc.","domain":"lairdplastics.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":3,"paid":2,"opportunity":900,"type":"Prospect"},{"customer":"Western Farmers Electric Coop","domain":"wfec.com","state":"Oklahoma","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":5,"paid":2,"opportunity":1500,"type":""},{"customer":"Tokai Carbon CB Ltd.","domain":"tokaicarbon.cb.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Anderson Merchandisers Lp.","domain":"andersonmerchandisers.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Safran Usa, Inc.","domain":"safran-usa.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"American Business Forms Inc","domain":"americanbusforms.com","state":"Minnesota","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Ngl Energy Partners Lp","domain":"nglenergypartners.com","state":"Oklahoma","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Driscoll Children's Hospital","domain":"driscollchildrens.org","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Truman Arnold Companies","domain":"tac-energy.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Plh Group, Inc.","domain":"plhgroupinc.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":"Prospect"},{"customer":"HomeRenew Buyer, Inc","domain":"homerenew.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Safran Defense & Space","domain":"safran-group.com","state":"New Hampshire","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Ninjaone, LLC","domain":"ninjaone.com","state":"Texas","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":50,"paid":16,"opportunity":15000,"type":"Existing Customer"}],"reinaldo halim":[{"customer":"Great American Insurance Group","domain":"gaig.com","state":"Washington","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":88,"paid":33,"opportunity":26400,"type":"Prospect"},{"customer":"Great American Insurance Group","domain":"gaig.com","state":"Washington","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":88,"paid":33,"opportunity":26400,"type":"Prospect"},{"customer":"Siemens Plm Software","domain":"siemens.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":2904,"paid":1011,"opportunity":871200,"type":"Prospect"},{"customer":"Leaf Home, LLC","domain":"leafhome.com","state":"Ohio","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":22,"paid":12,"opportunity":6600,"type":"Prospect"},{"customer":"Vorys, Sater, Seymour And Pease Llp","domain":"vorys.com","state":"Ohio","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":21,"paid":5,"opportunity":6300,"type":"Prospect"},{"customer":"Herzog Technologies Inc.","domain":"herzog.com","state":"Missouri","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":44,"paid":9,"opportunity":13200,"type":"Prospect"},{"customer":"Orrick, Herrington & Sutcliffe, Llp","domain":"orrick.com","state":"California","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":38,"paid":3,"opportunity":11400,"type":"Prospect"},{"customer":"Adena Health System","domain":"adena.org","state":"Ohio","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":104,"paid":7,"opportunity":31200,"type":"Prospect"},{"customer":"Spirit Aerosystems","domain":"spiritaero.com","state":"Kansas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":61,"paid":8,"opportunity":18300,"type":"Prospect"},{"customer":"Eversana","domain":"eversana.com","state":"Pennsylvania","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":96,"paid":3,"opportunity":28800,"type":"Prospect"},{"customer":"Lathrop Gpm LLP","domain":"lathropgpm.com","state":"Missouri","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":8,"paid":1,"opportunity":2400,"type":"Prospect"},{"customer":"Bob Evans Farms, Inc.","domain":"bobevans.com","state":"Ohio","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":5,"paid":1,"opportunity":1500,"type":"Prospect"},{"customer":"Heritage Environmental Services","domain":"heritage-enviro.com","state":"Indiana","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":3,"paid":1,"opportunity":900,"type":"Prospect"},{"customer":"Lmh Materials Management-Ap","domain":"lmh-materials.com","state":"Kansas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Third Federal Savings and Loan","domain":"thirdfederal.com","state":"Ohio","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":"Prospect"},{"customer":"The Heritage Group","domain":"theheritagegroup.com","state":"Indiana","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Siemens Plm Software","domain":"siemens.com","state":"Texas","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":2904,"paid":1011,"opportunity":871200,"type":"Existing Customer"}],"zest zhang":[{"customer":"Bank Of Oklahoma","domain":"bokf.com","state":"Oklahoma","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":209,"paid":105,"opportunity":62700,"type":"Prospect"},{"customer":"Nch Corporation","domain":"nch.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":97,"paid":33,"opportunity":29100,"type":"Prospect"},{"customer":"Ben E. Keith Company","domain":"benekeith.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":87,"paid":25,"opportunity":26100,"type":"Prospect"},{"customer":"Welltower OP LLC","domain":"welltower.com","state":"Ohio","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":29,"paid":10,"opportunity":8700,"type":"Prospect"},{"customer":"Crunchyroll, LLC","domain":"crunchyroll.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":308,"paid":22,"opportunity":92400,"type":"Prospect"},{"customer":"Crunchyroll, LLC","domain":"crunchyroll.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":308,"paid":22,"opportunity":92400,"type":"Prospect"},{"customer":"CrunchyRoll","domain":"crunchyroll.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":308,"paid":22,"opportunity":92400,"type":"Prospect"},{"customer":"CrunchyRoll","domain":"crunchyroll.com","state":"Texas","tier":1,"tier_name":"🔥 HOT","script":"high_usage","yau":308,"paid":22,"opportunity":92400,"type":"Prospect"},{"customer":"Aspira","domain":"aspiraconnect.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":12,"paid":4,"opportunity":3600,"type":"Prospect"},{"customer":"Macquarie Infrastructure Corporation","domain":"macquarie.com","state":"New York","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":251,"paid":6,"opportunity":75300,"type":"Prospect"},{"customer":"Macquarie Infrastructure Corporation","domain":"macquarie.com","state":"New York","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":251,"paid":6,"opportunity":75300,"type":"Prospect"},{"customer":"Daystar Television Network","domain":"daystar.com","state":"Texas","tier":2,"tier_name":"🌊 WARM","script":"high_usage","yau":10,"paid":4,"opportunity":3000,"type":"Prospect"},{"customer":"Leeward Renewable Energy, LLC","domain":"leewardenergy.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":8,"paid":4,"opportunity":2400,"type":""},{"customer":"Westwood Holdings Group","domain":"westwoodgroup.com","state":"Texas","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":2,"paid":0,"opportunity":600,"type":""},{"customer":"Gulfport Energy Corporation","domain":"gulfportenergy.com","state":"Oklahoma","tier":3,"tier_name":"💡 POTENTIAL","script":"low_usage","yau":4,"paid":0,"opportunity":1200,"type":"Prospect"},{"customer":"Whataburger, Inc.","domain":"whataburger.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"WDT Acquisition Corp.","domain":"ashland.com","state":"Texas","tier":4,"tier_name":"🆕 NEW","script":"low_usage","yau":0,"paid":0,"opportunity":0,"type":""},{"customer":"Bank Of Oklahoma","domain":"bokf.com","state":"Oklahoma","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":209,"paid":105,"opportunity":62700,"type":"Existing Customer"},{"customer":"Atmos Energy Corporation","domain":"atmosenergy.com","state":"Texas","tier":5,"tier_name":"⏭ SKIP","script":null,"yau":123,"paid":49,"opportunity":36900,"type":"Existing Customer"}]};
+
+const repSelect = document.getElementById('repSelect');
+
+// ── localStorage helpers ──────────────────────────────────────────────────
+function storageKey(rep) { return 'canva_sc_blitz_v1_' + rep; }
+
+function getContacted(rep) {
+    try { return JSON.parse(localStorage.getItem(storageKey(rep)) || '{}'); }
+    catch(e) { return {}; }
+}
+
+function setContacted(rep, obj) {
+    try { localStorage.setItem(storageKey(rep), JSON.stringify(obj)); }
+    catch(e) {}
+}
+
+function markContacted(rep, customerId) {
+    const c = getContacted(rep);
+    c[customerId] = { ts: Date.now() };
+    setContacted(rep, c);
+}
+
+function unmarkContacted(rep, customerId) {
+    const c = getContacted(rep);
+    delete c[customerId];
+    setContacted(rep, c);
+}
+
+function isContacted(rep, customerId) {
+    return !!getContacted(rep)[customerId];
+}
+
+function makeCustomerId(account) {
+    return (account.customer + '|' + account.domain).replace(/[^a-z0-9|]/gi, '_');
+}
+
+// ── Toast ─────────────────────────────────────────────────────────────────
+function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ── Main display ──────────────────────────────────────────────────────────
+function updateDisplay() {
+    const rep = repSelect.value;
+    const hide = id => document.getElementById(id).style.display = 'none';
+    const show = (id, type) => document.getElementById(id).style.display = type || 'block';
+
+    if (!rep) {
+        ['statsContainer','actionsBar','filterControls','legend','talkingPointsContainer','accountsContainer'].forEach(hide);
+        return;
+    }
+    show('filterControls', 'flex');
+
+    const priorityFilter = document.getElementById('priorityFilter').value;
+    const contactedFilter = document.getElementById('contactedFilter').value;
+    const selectedTiers = priorityFilter === 'all' ? [1,2,3,4] : [parseInt(priorityFilter)];
+
+    const allAccounts = repData[rep];
+    const callable = allAccounts.filter(a => a.tier < 5);
+    const filtered = callable.filter(a => selectedTiers.includes(a.tier));
+    const contactedCount = callable.filter(a => isContacted(rep, makeCustomerId(a))).length;
+
+    // Stats
+    const totalOpp = callable.reduce((s,a) => s + a.opportunity, 0);
+    const hot = callable.filter(a => a.tier === 1).length;
+    const warm = callable.filter(a => a.tier === 2).length;
+    const oppDisplay = totalOpp >= 1000000 ? '$' + (totalOpp/1000000).toFixed(1) + 'M' : '$' + (totalOpp/1000).toFixed(0) + 'K';
+    const pct = callable.length > 0 ? Math.round(contactedCount / callable.length * 100) : 0;
+
+    document.getElementById('statsContainer').innerHTML = `
+        <div class="stat-card">
+            <h3>Your Accounts</h3>
+            <div class="value">${callable.length}</div>
+            <small>to contact</small>
+        </div>
+        <div class="stat-card">
+            <h3>Total Opportunity</h3>
+            <div class="value">${oppDisplay}</div>
+            <small>potential revenue</small>
+        </div>
+        <div class="stat-card">
+            <h3>&#128293; Hot Leads</h3>
+            <div class="value">${hot}</div>
+            <small>high priority</small>
+        </div>
+        <div class="stat-card">
+            <h3>&#127754; Warm Leads</h3>
+            <div class="value">${warm}</div>
+            <small>good priority</small>
+        </div>
+        <div class="stat-card progress-card">
+            <h3>&#10003; Progress</h3>
+            <div class="value">${contactedCount}<span style="font-size:0.5em;opacity:0.8"> / ${callable.length}</span></div>
+            <small>called &amp; emailed</small>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" style="width:${pct}%"></div>
+            </div>
+        </div>
+        <div class="stat-card" style="background:linear-gradient(135deg,#0984e3,#74b9ff);">
+            <h3>Region</h3>
+            <div class="value" style="font-size:1.1em;padding-top:8px;">US Central</div>
+            <small>your territory</small>
+        </div>
+    `;
+
+    // Talking points
+    const pf = priorityFilter;
+    let tpHTML = '<div class="talking-points">';
+    if (pf === 'all') {
+        tpHTML += `<h3>&#128161; Key Talking Points &#8212; All Priorities:</h3>
+        <p style="margin-bottom:15px;"><em>Select a specific priority above for targeted talking points.</em></p>
+        <ul>
+            <li><strong>&#128293; HOT (10+ paid seats)</strong> &#8212; Move billing from credit card to Softchoice enterprise procurement.</li>
+            <li><strong>&#127754; WARM (high usage, mostly free)</strong> &#8212; Unlock premium features, professional workflows, tool consolidation.</li>
+            <li><strong>&#128161; POTENTIAL &amp; &#128279; NEW</strong> &#8212; Education on capabilities, all-in-one platform, enterprise features.</li>
+        </ul>`;
+    } else if (pf === '1') {
+        tpHTML += `<h3>&#128293; HOT LEADS &#8212; Key Talking Points:</h3>
+        <p style="margin-bottom:15px;"><em>Already paying for Canva &#8212; the win is moving billing through Softchoice.</em></p>
+        <ul>
+            <li><strong>Simple procurement upgrade</strong> &#8212; "Your team is already paying for Canva. Let's move that billing through Softchoice for proper invoicing, POs, and consolidated software spend."</li>
+            <li><strong>Enterprise controls</strong> &#8212; "Moving to an enterprise agreement unlocks SSO, SCIM provisioning, brand kits, admin controls, and SOC 2 compliance."</li>
+            <li><strong>Cost consolidation</strong> &#8212; "Most orgs save money under a single agreement versus individual subscriptions."</li>
+            <li><strong>Expansion opportunity</strong> &#8212; "If current paid users are getting value, there are likely more people who'd benefit."</li>
+        </ul>`;
+    } else if (pf === '2') {
+        tpHTML += `<h3>&#127754; WARM LEADS &#8212; Key Talking Points:</h3>
+        <p style="margin-bottom:15px;"><em>Already engaged &#8212; focus on unlocking capabilities they're missing.</em></p>
+        <ul>
+            <li><strong>Unlock premium features</strong> &#8212; "Your team is already creating in Canva. Imagine what they could do with premium templates, brand kits, background remover, and video editing."</li>
+            <li><strong>Professional workflows</strong> &#8212; "Move from one-off designs to consistent, on-brand content at scale."</li>
+            <li><strong>Replace other tools</strong> &#8212; "Many teams consolidate PowerPoint, Adobe, and video tools into Canva Enterprise."</li>
+            <li><strong>ROI</strong> &#8212; "Canva Enterprise pays for itself by making everyone 2&#8211;3x faster at content creation."</li>
+        </ul>`;
+    } else {
+        tpHTML += `<h3>&#128161; POTENTIAL &amp; &#128279; NEW LEADS &#8212; Key Talking Points:</h3>
+        <p style="margin-bottom:15px;"><em>Needs education on what Canva Enterprise can do for their org.</em></p>
+        <ul>
+            <li><strong>All-in-one platform</strong> &#8212; "Canva Enterprise replaces presentations, documents, social media design, video editing, and whiteboards in one platform."</li>
+            <li><strong>Easy adoption</strong> &#8212; "Teams start creating professional content in minutes &#8212; no learning curve like Adobe."</li>
+            <li><strong>Enterprise grade</strong> &#8212; SSO, SCIM, SOC 2, GDPR, admin controls, brand management, approval workflows.</li>
+            <li><strong>Discovery approach</strong> &#8212; "I'd love to connect you with Canva's team for a quick discovery call to see if it's a fit."</li>
+        </ul>`;
+    }
+    tpHTML += '</div>';
+    document.getElementById('talkingPointsContainer').innerHTML = tpHTML;
+
+    // Build account rows
+    const container = document.getElementById('accountsContainer');
+    const todoAccounts = filtered.filter(a => !isContacted(rep, makeCustomerId(a)));
+    const doneAccounts = filtered.filter(a => isContacted(rep, makeCustomerId(a)));
+
+    let html = '';
+
+    if (contactedFilter !== 'done') {
+        html += `<div class="section-header">
+            <h3>&#128203; To Contact</h3>
+            <span class="section-badge badge-todo">${todoAccounts.length} accounts</span>
+        </div>`;
+        if (todoAccounts.length === 0) {
+            html += '<p style="color:#27ae60;font-weight:600;padding:20px;text-align:center;">&#127881; You’ve contacted all accounts in this view!</p>';
+        } else {
+            html += buildTable(todoAccounts, rep, false);
+        }
+    }
+
+    if (doneAccounts.length > 0 && contactedFilter !== 'todo') {
+        html += `<hr class="followup-divider">
+        <div class="section-header">
+            <h3>&#10003; Follow Up</h3>
+            <span class="section-badge badge-done">${doneAccounts.length} contacted</span>
+        </div>`;
+        html += buildTable(doneAccounts, rep, true);
+    }
+
+    container.innerHTML = html;
+
+    document.getElementById('clearBtn').style.display = contactedCount > 0 ? 'inline-flex' : 'none';
+
+    ['statsContainer','actionsBar','legend','talkingPointsContainer','accountsContainer'].forEach(id => show(id, id === 'statsContainer' ? 'grid' : id === 'actionsBar' ? 'flex' : 'block'));
+}
+
+function buildTable(accounts, rep, isFollowUp) {
+    const headClass = isFollowUp ? 'followup-head' : '';
+    let html = `<table><thead class="${headClass}"><tr>
+        <th>Priority</th><th>Customer</th><th>State</th>
+        <th>Resources</th><th>YAU</th><th>Paid</th><th>Opportunity</th><th>Status</th>
+    </tr></thead><tbody>`;
+
+    accounts.forEach(account => {
+        const cid = makeCustomerId(account);
+        const tc = 'tier-' + account.tier;
+        const yau = account.yau > 0 ? account.yau : '&#8212;';
+        const paid = account.paid > 0 ? account.paid : '&#8212;';
+        const opp = account.opportunity > 0 ? '$' + account.opportunity.toLocaleString() : '&#8212;';
+        const state = account.state || '&#8212;';
+        const scriptType = account.script;
+        const rsrc = (scriptType === 'high_usage')
+            ? '<a href="phone_script_high_usage.html" target="_blank" style="color:#27ae60;text-decoration:underline;display:block;margin-bottom:4px;">&#128222; Phone Script</a><a href="email_templates_high_usage.html" target="_blank" style="color:#27ae60;text-decoration:underline;display:block;">&#128140; Email Templates</a>'
+            : '<a href="phone_script_low_usage.html" target="_blank" style="color:#27ae60;text-decoration:underline;display:block;margin-bottom:4px;">&#128222; Phone Script</a><a href="email_templates_low_usage.html" target="_blank" style="color:#27ae60;text-decoration:underline;display:block;">&#128140; Email Templates</a>';
+        const rowClass = isFollowUp ? 'contacted-row' : '';
+
+        let statusCell = '';
+        if (isFollowUp) {
+            statusCell = `<span class="contacted-badge">&#10003; Called &amp; Emailed</span>
+                <button class="btn-undo" onclick="handleUndo('${rep}','${cid.replace(/'/g,"\'")}')">&#8617; Undo</button>`;
+        } else {
+            statusCell = `<button class="btn-contact" onclick="handleContact('${rep}','${cid.replace(/'/g,"\'")}')">&#128222; Called &amp; Emailed</button>`;
+        }
+
+        html += `<tr class="${rowClass}">
+            <td><span class="tier-badge ${tc}">${account.tier_name}</span></td>
+            <td><strong>${account.customer}</strong><br><code style="font-size:0.82em;color:#777;">${account.domain}</code></td>
+            <td>${state}</td>
+            <td>${rsrc}</td>
+            <td>${yau}</td>
+            <td>${paid}</td>
+            <td><span class="opportunity">${opp}</span></td>
+            <td>${statusCell}</td>
+        </tr>`;
+    });
+    html += '</tbody></table>';
+    return html;
+}
+
+function handleContact(rep, cid) {
+    markContacted(rep, cid);
+    showToast('\u2705 Marked as called & emailed!');
+    updateDisplay();
+}
+
+function handleUndo(rep, cid) {
+    unmarkContacted(rep, cid);
+    showToast('\u21a9\ufe0f Moved back to To Contact');
+    updateDisplay();
+}
+
+function clearAllContacted() {
+    const rep = repSelect.value;
+    if (!rep) return;
+    if (confirm('Reset all your progress for ' + rep + '? This cannot be undone.')) {
+        localStorage.removeItem(storageKey(rep));
+        showToast('Progress reset.');
+        updateDisplay();
+    }
+}
+
+function downloadCSV() {
+    const rep = repSelect.value;
+    if (!rep) return;
+    const accounts = repData[rep].filter(a => a.tier < 5);
+    let csv = 'Priority,Customer,Domain,State,YAU,Paid Users,Opportunity,Contacted,Script Reference\n';
+    accounts.forEach(a => {
+        const cid = makeCustomerId(a);
+        const done = isContacted(rep, cid) ? 'Yes' : 'No';
+        const scriptRef = (a.script === 'high_usage') ? 'High-Usage Phone + Email' : 'Low-Usage Phone + Email';
+        csv += `"${a.tier_name}","${a.customer}","${a.domain}","${a.state}","${a.yau||''}","${a.paid||''}","${a.opportunity||''}","${done}","${scriptRef}"\n`;
+    });
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url; anchor.download = rep.replace(/ /g,'_') + '_Canva_Spring2026.csv';
+    document.body.appendChild(anchor); anchor.click();
+    document.body.removeChild(anchor); URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
