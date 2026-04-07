@@ -71,8 +71,7 @@
 const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQC6o5EAD-6DEAEUGULMTHn9RelIxZElOzhtPOrVmoZNkeVhvTGyAij01e1sVVJOtLgul9-WVpma0JL/pub?gid=1662894857&single=true&output=csv';
 const PTS = { deals: 100, meetings: 40, registrations: 25, calls: 3, emails: 1 };
 function parseCSV(text) {
-    const lines = text.trim().split('
-').map(l => l.trim()).filter(l => l);
+    const lines = text.trim().split(/\r?\n/).map(l => l.trim()).filter(l => l);
     if (lines.length < 2) return [];
     const headers = lines[0].split(',').map(h => h.trim().replace(/"/g,'').toLowerCase());
     return lines.slice(1).map(line => {
